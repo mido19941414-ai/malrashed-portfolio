@@ -269,7 +269,13 @@ html[lang=ar] .bk h5{font-weight:700}
 
 /* ---------- Thanks + contact ---------- */
 .thanks-stage{padding:0;height:clamp(360px,46vw,100vh)}
-.contact-sec .wrap{display:grid;grid-template-columns:1.2fr .8fr;gap:clamp(24px,4vw,60px);align-items:stretch}
+.contact-sec .wrap{display:block}
+.contact-sec .glass{display:grid;grid-template-columns:1.1fr 1fr;column-gap:clamp(30px,6vw,110px);row-gap:26px;align-items:center;padding:clamp(30px,5vw,72px)}
+.contact-sec .glass>.eyebrow{grid-column:1;grid-row:1;margin:0}
+.contact-sec .glass>h3{grid-column:1;grid-row:2/5}
+.contact-sec .glass>.clines{grid-column:2;grid-row:2;margin:0}
+.contact-sec .glass>.socials{grid-column:2;grid-row:3;margin:0}
+.contact-sec .glass>.cta{grid-column:2;grid-row:4;margin:0;justify-self:start}
 .contact-sec h3{font-size:clamp(34px,4.4vw,64px);font-weight:600;line-height:1.1}
 html[lang=ar] .contact-sec h3{font-weight:900;line-height:1.35}
 .contact-sec h3 small{display:block;font-size:.34em;font-weight:200;color:var(--mute);margin-top:14px}
@@ -417,7 +423,8 @@ html[dir=rtl] .eyebrow::before{transform-origin:right}
   .burger{display:block;z-index:2}
   .toc{grid-template-columns:repeat(2,1fr)}
   .toc a:last-child{grid-column:span 2}
-  .split,.split.rev,.project .wrap,.report .wrap,.photo .wrap,.contact-sec .wrap{grid-template-columns:1fr}
+  .split,.split.rev,.project .wrap,.report .wrap,.photo .wrap{grid-template-columns:1fr}
+  .contact-sec .glass{display:block}.contact-sec .glass>*+*{margin-top:24px!important}
   .skills .portrait{order:-1}
   .project .info{position:static}
   .report.alt .wrap .info{order:0}
@@ -793,10 +800,6 @@ html[dir=rtl] .eyebrow::before{transform-origin:right}
       <div class="socials" id="socials"></div>
       <a class="cta" id="cta" href="https://linktr.ee/malrashed" target="_blank" rel="noopener"><span data-ar="جميع حساباتي">All my contact links</span> <span aria-hidden="true">↗</span></a>
     </div>
-    <div class="glass qr rv" style="--dl:.1s">
-      <div class="code"><img src="qr.png" alt="QR code — contact links"></div>
-      <p data-ar="امسح الرمز للوصول إلى حساباتي">Scan to get in touch</p>
-    </div>
   </div>
 </section>
 
@@ -827,7 +830,6 @@ const SOCIALS = [
   { name:"Email",     url:"mailto:mido19941414@gmail.com", icon:'<path d="M3 5h18a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1zm9 7.2L4.2 7H4v.6l8 5.4 8-5.4V7h-.2z"/>' },
   { name:"Instagram", url:"https://www.instagram.com/int.e5/", icon:'<path d="M12 7.3A4.7 4.7 0 1 0 16.7 12 4.7 4.7 0 0 0 12 7.3zm0 7.7a3 3 0 1 1 3-3 3 3 0 0 1-3 3zm6-7.9a1.1 1.1 0 1 1-1.1-1.1A1.1 1.1 0 0 1 18 7.1zM21.9 7a5.4 5.4 0 0 0-1.5-3.9A5.4 5.4 0 0 0 16.6 1.6C15 1.5 9 1.5 7.4 1.6A5.4 5.4 0 0 0 3.6 3.1 5.4 5.4 0 0 0 2.1 7c-.1 1.6-.1 6.4 0 8a5.4 5.4 0 0 0 1.5 3.9 5.4 5.4 0 0 0 3.8 1.5c1.6.1 7.6.1 9.2 0a5.4 5.4 0 0 0 3.8-1.5 5.4 5.4 0 0 0 1.5-3.9c.1-1.6.1-6.4 0-8zm-2.1 9.7a3 3 0 0 1-1.7 1.7c-1.2.5-4 .4-5.3.4s-4.1.1-5.3-.4a3 3 0 0 1-1.7-1.7c-.5-1.2-.4-4-.4-5.3s-.1-4.1.4-5.3a3 3 0 0 1 1.7-1.7c1.2-.5 4-.4 5.3-.4s4.1-.1 5.3.4a3 3 0 0 1 1.7 1.7c.5 1.2.4 4 .4 5.3s.1 4.1-.4 5.3z"/>' },
   { name:"LinkedIn",  url:"https://www.linkedin.com/in/mohammed-alrashed-9b28a6235/", icon:'<path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zm7 0h3.8v1.7h.1c.5-1 1.8-2 3.8-2 4 0 4.8 2.6 4.8 6V21h-4v-5.6c0-1.3 0-3-1.9-3s-2.2 1.5-2.2 2.9V21h-4z"/>' },
-  { name:"X",         url:"", icon:'<path d="M17.8 2h3.3l-7.2 8.3L22.4 22h-6.6l-5.2-6.8L4.6 22H1.3l7.7-8.8L1 2h6.8l4.7 6.2zm-1.2 18h1.8L7.5 3.9H5.6z"/>' },
   { name:"Snapchat",  url:"https://www.snapchat.com/add/int.e93", icon:'<path d="M12 2c3.1 0 5.3 2.4 5.3 5.4v2.3c.4.2 1 .1 1.5-.1.5-.2 1 .2.9.7-.1.4-.6.7-1.4 1-.5.2-.6.5-.4.9.9 1.9 2.4 3.3 4.2 3.8.4.1.4.6.1.8-.6.4-1.5.5-2.1.6-.2.4-.1 1-.6 1.1-.6.1-1.4-.2-2.4 0-1.3.3-2.2 1.9-5.1 1.9s-3.8-1.6-5.1-1.9c-1-.2-1.8.1-2.4 0-.5-.1-.4-.7-.6-1.1-.6-.1-1.5-.2-2.1-.6-.3-.2-.3-.7.1-.8 1.8-.5 3.3-1.9 4.2-3.8.2-.4.1-.7-.4-.9-.8-.3-1.3-.6-1.4-1-.1-.5.4-.9.9-.7.5.2 1.1.3 1.5.1V7.4C6.7 4.4 8.9 2 12 2z"/>' },
   { name:"TikTok",    url:"https://www.tiktok.com/@int.e93", icon:'<path d="M16.6 2h-3.4v13.4a2.9 2.9 0 1 1-2-2.8V9.1a6.3 6.3 0 1 0 5.4 6.3V8.6a7.9 7.9 0 0 0 4.6 1.5V6.7a4.6 4.6 0 0 1-4.6-4.7z"/>' }
 ];
